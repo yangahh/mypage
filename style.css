@@ -1,0 +1,313 @@
+/*
+font-family: 'Barlow', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+*/
+
+/* COMMON */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+body {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* chorme safari 설정 */
+  -moz-box-sizing: border-box; /* firefox 설정 */
+  word-break: break-all; /* 줄바꿈 속성 */
+  font-family: "Barlow", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none; /* 리스트 앞에 점이 안 붙게 */
+}
+
+hr {
+  border-color: #b71c1c;
+  width: 100px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.header-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 60px; */
+  z-index: 99; /* 숫자가 높을 수록 위로 */
+  /* background-color: #707070; */
+  background-color: white;
+  box-shadow: 0 1px 10px rgb(0, 0, 0, 0.5);
+  color: black;
+}
+
+/* 애나메이션으로 투명도 변화주기 */
+.navbar-fade {
+  animation-name: navbar-fade; /* 적용할 애니메이션 이름 */
+  animation-duration: 0.5s; /* 0.5초 동안 적용 */
+
+  /* 크롬, 사파리에서도 동작할 수 있게 설정 */
+  -webkit-animation-name: navbar-fade;
+  -webkit-animation-duration: 0.5s;
+}
+
+@keyframes navbar-fade {
+  /* 애니메이션 효과를 주는 키워드로 뒤에는 애니메이션 이름을 설정 */
+  from {
+    opacity: 0.4;
+  } /* 투명도를 0.4에서 1로 */
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes navbar-fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar {
+  width: calc(100% - 120px); /* 100%에서 120px를 제외한 길이를 너비로 지정 */
+  height: 100%;
+  margin: 0 60px;
+  padding: 10px 0;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.nav-menu-item {
+  padding: 8px 12px;
+}
+
+.nav-menu-item a {
+  font-size: 20px;
+}
+
+.nav-menu-item a:hover {
+  color: #b71c1c;
+}
+
+.navbar-btn {
+  /* position: absolute; */
+  display: none;
+}
+
+.nav-btn-item {
+  padding: 8px 12px;
+}
+
+.nav-btn-item i,
+.nav-btn-item a {
+  font-size: 20px;
+  color: black;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar-btn {
+    display: flex;
+    /* width: 100%; */
+    /* margin: auto; */
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+}
+
+/* SECTION */
+.section_1 {
+  background-color: white;
+  padding: 60px 0;
+  height: auto;
+}
+
+.section_2 {
+  background-color: #eeeeee;
+  padding: 60px 0;
+  height: auto;
+}
+
+.container {
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto; /* 가운데 정렬 */
+  text-align: center;
+}
+
+.container.main > h1 {
+  font-size: 22px;
+  color: #3c3c3c;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 80px auto;
+}
+
+.container h1 {
+  font-size: 27px;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.about-text {
+  margin: 50px auto;
+}
+
+.about span {
+  font-size: 20px;
+  color: #3c3c3c;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0 20px;
+}
+
+.about ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.about li {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.about i {
+  font-size: 100px;
+  color: #3c3c3c;
+  /* margin: 0 5px; */
+}
+
+.about > ul > li > p {
+  font-size: 20px;
+  color: black;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .about ul {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    /* width: 100%; */
+  }
+
+  .about > ul > li {
+    margin: 10px auto;
+    width: 100%;
+  }
+
+  .about > ul > li > p {
+    width: 300px;
+  }
+
+  #direction > i {
+    display: none;
+  }
+}
+
+.interests > .contents {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.interests > .contents > .row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.interests > .contents > .row > .interest-item {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+@media screen and (max-width: 799px) {
+  .interests > .contents > .row {
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0;
+  }
+
+  .interests > .contents > .row > .interest-item {
+    margin: 20px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: calc(100% - 40px);
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.interest-item:hover .overlay {
+  opacity: 1;
+}
+
+.contact ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 500px;
+  margin: 50px auto;
+}
+
+.contact i {
+  font-size: 50px;
+  color: black;
+  /* margin: 0 5px; */
+}
+
+.contact li img {
+  width: 50px;
+  height: 50px;
+}
