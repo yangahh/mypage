@@ -28,6 +28,10 @@ a {
   color: black;
 }
 
+p {
+  color: black;
+}
+
 ul {
   list-style: none; /* 리스트 앞에 점이 안 붙게 */
 }
@@ -284,7 +288,7 @@ hr {
   color: white;
   font-size: 20px;
   font-family: "Noto Sans KR", sans-serif;
-  padding: 20px;
+  padding: 20px; /* 1rem == 16px */
   text-align: center;
 }
 
@@ -310,4 +314,74 @@ hr {
 .contact li img {
   width: 50px;
   height: 50px;
+}
+
+/* game page */
+
+.game-title > h1 {
+  font-size: 30px;
+  color: black;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 80px auto 40px auto;
+}
+.game-title > p {
+  font-size: 17px;
+  color: #3c3c3c;
+}
+
+.word-display {
+  margin: 20px auto;
+  font-size: 80px;
+  color: #b71c1c;
+}
+
+.word-input-box {
+  margin: 30px auto;
+}
+
+.word-input {
+  margin: 30px auto;
+  padding: 0.5rem;
+  width: 350px;
+  height: 30px;
+  /* line-height: normal; 줄 간격 설정. 여기서는 필요없음. 어차피 한 줄 */
+  border: 0.5px solid #adaca8;
+  border-radius: 4px;
+}
+
+.game-info {
+  width: 300px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.time-info,
+.score-info {
+  font-size: 20px;
+  color: black;
+  display: inline-block;
+  width: 200px;
+}
+
+.time,
+.score {
+  font-size: 25px;
+  color: black;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.button {
+  width: 200px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+}
+
+.loading {
+  /* 게임중에는 클릭이 안되도록 */
+  background-color: #eeeeee;
+  cursor: not-allowed;
 }

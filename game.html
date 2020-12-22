@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>타이핑 게임 :)</title>
+    
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/0c815b8bc2.js" crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- user style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-area navbar-fixed navbar-fade" id="header">
+        <!-- 네비게이션 영역 -->
+        <nav class="navbar">
+            <div class="navbar-btn">
+                <div class="nav-btn-item">
+                    <i class="fas fa-angle-down"></i>
+                    <a href="#" class="nav-menu-btn">MENU</a>
+                </div>
+            </div>
+            <!-- 메뉴 영역 -->
+            <ul class="navbar-menu">
+                <li class="nav-menu-item"><a href="index.html#about" class="nav-link" id="navAbout">ABOUT</a></li>
+                <li class="nav-menu-item"><a href="index.html#interests" class="nav-link" id="navInterests">INTERESTS</a></li>
+                <li class="nav-menu-item"><a href="index.html#contact" class="nav-link" id="navContact">CONTACT</a></li>
+                <li class="nav-menu-item"><a href="game.html" class="nav-link" id="navGame">GAME</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- section -->
+    <section class="section_2" id="game-title">
+        <div class="container game" id="container-game">
+            <div class="game-title">
+                <h1>Typing Game!</h1>
+                <p>Try typing the below words within the limited time.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section_1" id="game-play">
+        <div class="container game" id="container-game">
+            <div class="word-display">
+                Hello
+            </div>
+            <div class="word-input-box">
+                <input type="text" class="word-input" />
+            </div>
+            <div class="game-info">
+                <div class="time-info">
+                    SECOND : <span class="time">10</span> 초
+                </div>
+                <div class="score-info">
+                    SCORE : <span class="score">0</span> 점
+                </div>
+            </div>
+            <button class="button loading">Game Start</button>
+        </div>
+    </section>
+    
+    <div id="top-btn">
+
+    </div>
+    
+    
+    <!-- user script -->
+    <script src="main.js" defer></script>
+</body>
+</html>
