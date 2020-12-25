@@ -337,18 +337,28 @@ hr {
 
 .word-input-box {
   margin: 30px auto;
+  display: flex;
 }
 
 .word-input {
-  margin: 30px auto;
+  margin: 30px 5px 30px auto;
   padding: 0.5rem;
-  width: 300px;
+  width: 220px;
   height: 30px;
   /* line-height: normal; 줄 간격 설정. 여기서는 필요없음. 어차피 한 줄 */
   border: 0.5px solid #adaca8;
   border-radius: 4px;
   color: black;
   font-size: 17px;
+}
+
+.enter {
+  margin: 30px auto 30px 5px;
+  padding: 0.5rem;
+  width: 50px;
+  height: 30px;
+  font-size: 16px;
+  color: black;
 }
 
 .game-info {

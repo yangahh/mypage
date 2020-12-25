@@ -29,6 +29,7 @@ let timeInterval;
 let checkInterval; // 아주 짧은 시간동안 계속 상태를 체크하는 함수
 
 const wordInput = document.querySelector(".word-input"); // input box에 글자 입력하면 값 받아오기
+const enterPress = document.querySelector(".enter");
 const scoreDisplay = document.querySelector(".score");
 const timeDisplay = document.querySelector(".time");
 const gameBtn = document.querySelector(".button");
@@ -41,7 +42,9 @@ function init() {
   // 1. 단어 불러오기
   getWords();
   // 2. input event가 발생할때마다 값을 가져오기
-  wordInput.addEventListener("input", checkWord); // checkWord()을 쓰면 여기서 바로 함수가 실행됨
+  // wordInput.addEventListener("input", checkWord); // checkWord()을 쓰면 여기서 바로 함수가 실행됨
+  wordInput.addEventListener("keypress", checkWord);
+  enterPress.addEventListener("keypress", checkWord);
   // 3. 게임 실행
   gameBtn.addEventListener("click", run);
 }
@@ -88,18 +91,20 @@ function run() {
 function checkWord() {
   // console.log(wordInput.value, wordDisplay.innerHTML.trim()); // trim() : 공백 제거
   // console.log(wordInput.value, wordDisplay.innerText); // 위에랑 같음. innerText : 여백없이 단순히 텍스트만 가져옴
-  if (wordInput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()) {
-    wordInput.value = ""; // 한번 맞게 치면 input 값 초기화
+  if (window.event.keyCode == 13) {
+    if (wordInput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()) {
+      // 게임중이 아닐 때 설정.
+      if (!isPlaying) {
+        alert("Game Start 버튼을 눌러주세요!");
+        return;
+      }
 
-    // 게임중이 아닐 때 입력을 하게 되면 score가 오르지 않도록 해야된다. 따라서 게임중이 아닐때는 return을 시켜서 아래 코드가 실행되지 않게 함
-    if (!isPlaying) {
-      return;
+      score++;
+      scoreDisplay.innerText = score;
+      const randomIndex = Math.floor(Math.random() * words.length); // Math.random() * num : 최대 num-1 까지의 랜덤한 수
+      wordDisplay.innerText = words[randomIndex];
     }
-
-    score++;
-    scoreDisplay.innerText = score;
-    const randomIndex = Math.floor(Math.random() * words.length); // Math.random() * num : 최대 num-1 까지의 랜덤한 수
-    wordDisplay.innerText = words[randomIndex];
+    wordInput.value = ""; // 엔터치면 input 값 초기화
   }
 }
 
