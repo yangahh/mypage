@@ -18,6 +18,10 @@ body {
   font-family: "Barlow", sans-serif;
 }
 
+html{
+	scroll-behavior: smooth; /* 스크롤 부드럽게 이동 효과 */
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -150,14 +154,14 @@ hr {
 
 /* SECTION */
 .section_1 {
-  background-color: white;
-  padding: 60px 0;
+  background-color: #eeeeee;
+  padding: 100px 0;
   height: auto;
 }
 
 .section_2 {
-  background-color: #eeeeee;
-  padding: 60px 0;
+  background-color: white;
+  padding: 100px 0;
   height: auto;
 }
 
@@ -166,6 +170,10 @@ hr {
   height: 100%;
   margin: 0 auto; /* 가운데 정렬 */
   text-align: center;
+}
+
+#main {
+  padding: 60px 0;
 }
 
 .container.main > h1 {
@@ -182,17 +190,40 @@ hr {
 }
 
 .about-text {
-  margin: 50px auto;
+  margin: 80px auto;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  position: relative;
+  /* width: 350px;
+  height: 250px; */
 }
 
 .about span {
   font-size: 20px;
   color: #3c3c3c;
   font-family: "Noto Sans KR", sans-serif;
+  width: 100%;
   margin: 0 20px;
 }
 
+.about-text > .about-detail-img {
+  width: 350px;
+  margin: 0 20px;
+}
+
+.about-text > .about-detail-text {
+  font-size: 25px;
+  color: #3c3c3c;
+  font-family: "Noto Sans KR", sans-serif;
+  width: 100%;
+  margin: 0 20px;
+  align-self: center;
+}
+
 .about ul {
+  margin-top: 50px;
+  padding-top: 30px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -213,7 +244,7 @@ hr {
 
 .about > ul > li > p {
   font-size: 20px;
-  color: black;
+  color: #3c3c3c;
   font-family: "Noto Sans KR", sans-serif;
   margin: 20px auto;
 }
@@ -238,6 +269,37 @@ hr {
   #direction > i {
     display: none;
   }
+}
+
+.personality > .contents {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+}
+
+.personality > .contents > .title-text {
+  font-size: 75px;
+  font-weight: bold;
+  color: #3c3c3c;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 20px auto;
+}
+
+.personality > .contents > .detail-box {
+  align-self: center;
+  margin: 20px auto;
+}
+
+.personality img {
+  width: 500px;
+  margin: 0 20px;
+}
+
+.personality li {
+  font-size: 20px;
+  color: #3c3c3c;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 20px auto;
 }
 
 .interests > .contents {
@@ -290,6 +352,29 @@ hr {
   font-family: "Noto Sans KR", sans-serif;
   padding: 20px; /* 1rem == 16px */
   text-align: center;
+}
+
+#end {
+  height: 750px;
+}
+
+.end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.end p { 
+  font-size: 30px;
+  color: #3c3c3c;
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 20px;
+}
+
+.end > .comment {
+  font-size: 20px;
+  color: #3c3c3c;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 /* When you mouse over the container, fade in the overlay title */
